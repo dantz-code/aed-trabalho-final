@@ -1,3 +1,6 @@
+#aed-trabalho-final
+Estruturas de Dados - Trabalho Final
+
 Considere um estacionamento de veículos com capacidade para até 8 veículos. É um estacionamento de formato retangular, limitado por duas ruas, como mostra a figura abaixo. Não é possível estacionar dois veículos um do lado do outro porque o espaço não comporta isso.
 
 <img width="772" height="125" alt="image" src="https://github.com/user-attachments/assets/f5461f6a-308f-4779-b400-a3af2955959f" />
