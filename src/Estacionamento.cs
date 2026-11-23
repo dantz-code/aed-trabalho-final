@@ -93,4 +93,19 @@ public class Estacionamento
         return false;
     }
 
+    public void ListarVeiculos()
+    {
+        var atual = Inicio;
+
+        if (atual == null )
+        {
+            Console.WriteLine("Estacionamento vazio");
+        }
+
+        while ( atual != null)
+        {
+            Console.WriteLine(atual.Placa);
+            atual = atual.Prox;
+        }
+    }
 }
