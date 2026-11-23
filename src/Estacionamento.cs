@@ -39,4 +39,46 @@ public class Estacionamento
         quantidadeDeCarros++;
     }
 
+    public bool RetirarPorPlaca(string placaSolicitada)
+    {
+        for (int tentativa = 0; tentativa < quantidadeDeCarros; tentativa++)
+        {
+            if (TentarRetirarPrimeiro(placaSolicitada))
+            {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+    private bool TentarRetirarPrimeiro(string placaSolicitada)
+    {
+        if (Inicio == null)
+        {
+            return false;
+        }
+
+        // Guarda o primeiro carro antes de avançar o início da fila.
+        var retirado = Inicio;
+        Inicio = retirado.Prox;
+
+        if (Inicio == null)
+        {
+            Fim = null;
+        }
+
+        retirado.Prox = null;
+        quantidadeDeCarros--;
+
+        if (placaSolicitada == retirado.Placa)
+        {
+            return true;
+        }
+
+        // Na manobra, o mesmo veículo volta com a hora de entrada original.
+        InserirNoFim(retirado);
+        return false;
+    }
+
 }
