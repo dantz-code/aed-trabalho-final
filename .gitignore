@@ -1,0 +1,29 @@
+# Compilação .NET
+[Bb]in/
+[Oo]bj/
+artifacts/
+
+# Configurações locais do Visual Studio e Rider
+.vs/
+.idea/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+*.DotSettings.user
+
+# Resultados de testes e cobertura
+[Tt]est[Rr]esults/
+*.coverage
+*.coveragexml
+
+# Arquivos temporários de editores
+*.tmp
+*.swp
+*.swo
+*~
+
+# Arquivos gerados pelo sistema operacional
+.DS_Store
+Thumbs.db
+Desktop.ini
