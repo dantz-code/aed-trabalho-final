@@ -4,6 +4,7 @@ using System;
 public class Estacionamento
 {
     private const int Capacidade = 8;
+    private const int TarifaPorHora = 12;
 
     private Veiculo? Inicio;
     private Veiculo? Fim;
@@ -73,6 +74,17 @@ public class Estacionamento
 
         if (placaSolicitada == retirado.Placa)
         {
+            var horaSaida = DateTime.Now;
+            retirado.HoraSaida = horaSaida;
+
+            var tempoNoPatio = horaSaida - retirado.HoraEntrada;
+            var horasCobradas = Math.Ceiling(tempoNoPatio.TotalHours);
+            var valorTotal = horasCobradas * TarifaPorHora;
+
+            Console.WriteLine($"Placa: {retirado.Placa}");
+            Console.WriteLine($"Horas cobradas: {horasCobradas}");
+            Console.WriteLine($"Valor a pagar: R$ {valorTotal:F2}");
+
             return true;
         }
 
