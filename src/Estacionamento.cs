@@ -44,7 +44,7 @@ public class Estacionamento
     {
         for (int tentativa = 0; tentativa < quantidadeDeCarros; tentativa++)
         {
-            if (TentarRetirarPrimeiro(placaSolicitada))
+            if (VerificarPrimeiroEManobrar(placaSolicitada))
             {
                 return true;
             }
@@ -53,7 +53,7 @@ public class Estacionamento
         return false;
     }
 
-    private bool TentarRetirarPrimeiro(string placaSolicitada)
+    private bool VerificarPrimeiroEManobrar(string placaSolicitada)
     {
         if (Inicio == null)
         {
